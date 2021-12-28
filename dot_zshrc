@@ -1,0 +1,21 @@
+# Stuff for both shells
+
+source ~/.bashrc
+
+alias restartkde="kbuildsycoca5 && kquitapp5 plasmashell && kstart5 plasmashell"
+eval $(thefuck --alias)
+
+ZSH_THEME="robbyrussell"
+
+plugins=(git copydir copyfile copybuffer dirhistory history z)
+
+source $ZSH/oh-my-zsh.sh
+
+if [ -z "$ZELLIJ" ]
+then
+  read "?Wanna launch Zellij? Y/n: " launch_zellij
+  if [[ $launch_zellij != n ]]
+  then
+    (zellij attach default || zellij -s default);exit
+  fi
+fi
