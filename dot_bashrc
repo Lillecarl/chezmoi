@@ -6,13 +6,15 @@ function bluesound() {
     pactl set-card-profile $(pactl list cards short | grep bluez |  awk '{ print $1 }') a2dp-sink
 }
 
-function nixos-rebuild-switch-sync {
-    sudo nixos-rebuild switch
-    echo "Syncing /boot"
-    sync /boot
-    echo "Syncing /boot-fallback"
-    sync /boot-fallback
-}
+#function nixos-rebuild-switch-sync {
+#    sudo nixos-rebuild switch
+#    echo "Syncing /boot"
+#    sync /boot
+#    echo "Syncing /boot-fallback"
+#    sync /boot-fallback
+#}
 
 eval $(zellij setup --generate-completion=zsh)
-eval $(ssh-agent)
+eval $(keychain --eval -q)
+
+#alias "chezmoi cd"="cd $(chezmoi source-path)"
