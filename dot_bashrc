@@ -15,3 +15,4 @@ function nixos-rebuild-switch-sync {
 }
 
 eval $(zellij setup --generate-completion=zsh)
+eval $(ssh-agent)
