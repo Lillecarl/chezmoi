@@ -1,4 +1,17 @@
-# Stuff for both shells
+if [ -z "$ZELLIJ" ]
+then
+  read "?Wanna launch Zellij? Y/n: " launch_zellij
+  if [[ $launch_zellij != n ]]
+  then
+    if [[ $(zellij list-sessions | grep default) ]];
+    then
+      zellij attach default
+    else
+      zellij -s default
+    fi
+    exit
+  fi
+fi
 
 source ~/.bashrc
 
@@ -11,11 +24,3 @@ plugins=(git copydir copyfile copybuffer dirhistory history z)
 
 source $ZSH/oh-my-zsh.sh
 
-if [ -z "$ZELLIJ" ]
-then
-  read "?Wanna launch Zellij? Y/n: " launch_zellij
-  if [[ $launch_zellij != n ]]
-  then
-    (zellij attach default || zellij -s default);exit
-  fi
-fi
