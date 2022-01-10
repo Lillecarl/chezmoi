@@ -22,5 +22,10 @@ ZSH_THEME="robbyrussell"
 
 plugins=(git copydir copyfile copybuffer dirhistory history z)
 
+if [ -d "$HOME/.oh-my-zsh" ]
+then
+  export ZSH=$HOME/.oh-my-zsh
+fi
+
 source $ZSH/oh-my-zsh.sh
 
