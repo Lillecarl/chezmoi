@@ -18,3 +18,13 @@ eval $(zellij setup --generate-completion=zsh)
 eval $(keychain --eval -q)
 
 #alias "chezmoi cd"="cd $(chezmoi source-path)"
+
+function cb() {
+  if command -v pbcopy &> /dev/null
+  then
+    pbcopy
+  elif command -v xclip &> /dev/null
+  then
+    xclip -sel clip
+  fi
+}
