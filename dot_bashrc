@@ -28,3 +28,8 @@ function cb() {
     xclip -sel clip
   fi
 }
+
+function nix-user-rebuild() {
+  nix-env --file default.nix --install --remove-all
+}
+
