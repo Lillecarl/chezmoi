@@ -1,0 +1,4 @@
+encryption = "age"
+[age]
+    identity = "~/key.txt"
+    recipient = "age1v0m7nz2f8w8mdk4mut55r5nuz23jdtxcfm2d4f3jycpcr8vwwynqu5dxzp"
