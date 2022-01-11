@@ -9,7 +9,7 @@ let
       htop
       nix
       tree
-      terraform
+      #terraform
       keychain
       powershell
     ];
