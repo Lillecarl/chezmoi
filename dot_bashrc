@@ -30,6 +30,6 @@ function cb() {
 }
 
 function nix-user-rebuild() {
-  nix-env --file default.nix --install --remove-all
+  nix-env --file ~/default.nix --install --remove-all
 }
 
