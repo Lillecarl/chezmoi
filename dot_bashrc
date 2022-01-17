@@ -6,6 +6,17 @@ function bluesound() {
     pactl set-card-profile $(pactl list cards short | grep bluez |  awk '{ print $1 }') a2dp-sink
 }
 
+function startwin10() {
+	echo "Starting win10"
+	if sudo virsh start win10
+	then
+		echo "Sleeping 5 seconds"
+		sleep 5
+	fi
+	echo "Switching display inputs"
+	sudo ddcutil -d 1 setvcp 0x60 0x03
+}
+
 #function nixos-rebuild-switch-sync {
 #    sudo nixos-rebuild switch
 #    echo "Syncing /boot"
