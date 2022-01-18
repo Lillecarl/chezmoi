@@ -2,4 +2,5 @@
     "files.insertFinalNewline": true,
     "telemetry.telemetryLevel": "off",
     "keyboard.dispatch": "keyCode",
+    "redhat.telemetry.enabled": false,
 }
