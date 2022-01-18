@@ -1,4 +1,5 @@
 {
     "files.insertFinalNewline": true,
     "telemetry.telemetryLevel": "off",
+    "keyboard.dispatch": "keyCode",
 }
