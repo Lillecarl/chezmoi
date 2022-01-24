@@ -5,6 +5,8 @@
 # `zellij setup --check`
 # It should show current config locations and features that are enabled.
 
+scroll-buffer-size: 10000
+
 keybinds:
     unbind: true
     normal:
