@@ -17,6 +17,14 @@ function startwin10() {
 	sudo ddcutil -d 1 setvcp 0x60 0x03
 }
 
+function vim() {
+  if command -v /usr/bin/env nvim &> /dev/null
+  then
+	/usr/bin/env nvim "$@"
+  else
+	/usr/bin/env vim "$@"
+  fi
+}
 
 function tfswitch() {
 	/usr/bin/env tfswitch -b $XDG_BIN_HOME/terraform "$@"
@@ -40,3 +48,4 @@ function cb() {
 function nix-user-rebuild() {
   nix-env --file ~/default.nix --install --remove-all
 }
+
