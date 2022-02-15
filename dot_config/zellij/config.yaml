@@ -50,6 +50,9 @@ keybinds:
         - action: [SwitchToMode: Normal,]
           key: [Ctrl: 'g',]
     resize:
+        # Allow exiting mode with Esc
+        - action: [SwitchToMode: Normal,]
+          key: [Esc,]
         - action: [SwitchToMode: Locked,]
           key: [Ctrl: 'g']
         - action: [SwitchToMode: Pane,]
@@ -95,6 +98,9 @@ keybinds:
         - action: [FocusNextPane,]
           key: [ Alt: ']',]
     pane:
+        # Allow exiting mode with Esc
+        - action: [SwitchToMode: Normal,]
+          key: [Esc,]
         - action: [SwitchToMode: Locked,]
           key: [Ctrl: 'g']
         - action: [SwitchToMode: Resize,]
@@ -138,6 +144,9 @@ keybinds:
         - action: [FocusNextPane,]
           key: [ Alt: ']',]
     move:
+        # Allow exiting mode with Esc
+        - action: [SwitchToMode: Normal,]
+          key: [Esc,]
         - action: [SwitchToMode: Locked,]
           key: [Ctrl: 'g']
         - action: [SwitchToMode: Pane,]
@@ -179,6 +188,9 @@ keybinds:
         - action: [FocusNextPane,]
           key: [ Alt: ']',]
     tab:
+        # Allow exiting mode with Esc
+        - action: [SwitchToMode: Normal,]
+          key: [Esc,]
         - action: [SwitchToMode: Locked,]
           key: [Ctrl: 'g']
         - action: [SwitchToMode: Pane,]
@@ -240,6 +252,9 @@ keybinds:
         - action: [ToggleTab]
           key: [ Char: "\t" ]
     scroll:
+        # Allow exiting mode with Esc
+        - action: [SwitchToMode: Normal,]
+          key: [Esc,]
         - action: [SwitchToMode: Normal,]
           key: [Ctrl: 'r', Ctrl: 's', Char: ' ',
           Char: "\n",]
@@ -286,6 +301,9 @@ keybinds:
         - action: [FocusNextPane,]
           key: [ Alt: ']',]
     renametab:
+        # Allow exiting mode with Esc
+        - action: [SwitchToMode: Normal,]
+          key: [Esc,]
         - action: [SwitchToMode: Normal,]
           key: [Ctrl: 'r', Ctrl: 's', Char: ' ',]
         - action: [SwitchToMode: Tab,]
@@ -307,6 +325,9 @@ keybinds:
         - action: [FocusNextPane,]
           key: [ Alt: ']',]
     session:
+        # Allow exiting mode with Esc
+        - action: [SwitchToMode: Normal,]
+          key: [Esc,]
         - action: [SwitchToMode: Locked,]
           key: [Ctrl: 'g']
         - action: [SwitchToMode: Resize,]
