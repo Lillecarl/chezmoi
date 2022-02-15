@@ -15,12 +15,18 @@ fi
 
 source ~/.bashrc
 
+# Node packages in homedir
+export PATH=$NODE_HOME/bin:$PATH
+export NODE_PATH=$NODE_HOME/lib/node_modules
+# Add home bin to path
+export PATH=$XDG_BIN_HOME:$PATH
+
 alias restartkde="kbuildsycoca5 && kquitapp5 plasmashell && kstart5 plasmashell"
 eval $(thefuck --alias)
 
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
 
-plugins=(git copydir copyfile copybuffer dirhistory history z)
+plugins=(git copydir copyfile copybuffer dirhistory history z vi-mode)
 
 if [ -d "$HOME/.oh-my-zsh" ] && [ ! -d "$ZSH" ]
 then
@@ -28,4 +34,4 @@ then
 fi
 
 source $ZSH/oh-my-zsh.sh
-
+eval "$(starship init zsh)"
