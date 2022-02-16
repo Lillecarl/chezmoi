@@ -33,7 +33,10 @@ function tfswitch() {
 eval $(zellij setup --generate-completion=zsh)
 eval $(keychain --eval -q)
 
-#alias "chezmoi cd"="cd $(chezmoi source-path)"
+if command -v /usr/bin/env keychain &> /dev/null
+then
+  (&> /dev/null keychain -q id_rsa id_ed25519 &)
+fi
 
 function cb() {
   if command -v pbcopy &> /dev/null
