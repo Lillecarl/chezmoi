@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Sleep
+Exec=qdbus org.kde.Solid.PowerManagement /org/freedesktop/PowerManagement Suspend
+Icon=face-sleeping
+
