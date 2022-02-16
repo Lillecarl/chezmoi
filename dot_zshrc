@@ -24,7 +24,7 @@ export PATH=$XDG_BIN_HOME:$PATH
 alias restartkde="kbuildsycoca5 && kquitapp5 plasmashell && kstart5 plasmashell"
 eval $(thefuck --alias)
 
-#ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell"
 
 plugins=(git copydir copyfile copybuffer dirhistory history z vi-mode)
 
@@ -34,4 +34,14 @@ then
 fi
 
 source $ZSH/oh-my-zsh.sh
-eval "$(starship init zsh)"
+
+if command -v /usr/bin/env starship &> /dev/null
+then
+  eval "$(starship init zsh)"
+fi
+
+if command -v /usr/bin/env direnv &> /dev/null
+then
+  eval "$(direnv hook zsh)"
+fi
+
