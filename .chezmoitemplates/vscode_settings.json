@@ -4,4 +4,5 @@
     "keyboard.dispatch": "keyCode",
     "redhat.telemetry.enabled": false,
     "vim.enableNeovim": true,
+    "workbench.startupEditor": "none",
 }
