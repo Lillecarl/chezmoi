@@ -191,6 +191,9 @@ keybinds:
         # Allow exiting mode with Esc
         - action: [SwitchToMode: Normal,]
           key: [Esc,]
+        # Allow toggling fullscreen from tab menu too
+        - action: [ToggleFocusFullscreen,]
+          key: [Char: 'f',]
         - action: [SwitchToMode: Locked,]
           key: [Ctrl: 'g']
         - action: [SwitchToMode: Pane,]
