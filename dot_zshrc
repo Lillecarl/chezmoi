@@ -45,3 +45,7 @@ then
   eval "$(direnv hook zsh)"
 fi
 
+if test -f "/etc/static/zshrc"; then
+  . /etc/static/zshrc
+fi
+
