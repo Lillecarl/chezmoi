@@ -30,11 +30,11 @@ function tfswitch() {
 	/usr/bin/env tfswitch -b $XDG_BIN_HOME/terraform "$@"
 }
 
-eval $(zellij setup --generate-completion=zsh)
-eval $(keychain --eval -q)
+command -v /usb/bin/env zellij &> /dev/null && eval $(zellij setup --generate-completion=zsh)
 
 if command -v /usr/bin/env keychain &> /dev/null
 then
+  eval $(keychain --eval -q)
   (&> /dev/null keychain -q id_rsa id_ed25519 &)
 fi
 
