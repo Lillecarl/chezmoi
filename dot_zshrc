@@ -1,4 +1,4 @@
-if [ -z "$ZELLIJ" ] && command -v /usr/bin/env zellij
+if [ -z "$ZELLIJ" ] && command -v /usr/bin/env zellij &> /dev/null
 then
   read "?Wanna launch Zellij? Y/n: " launch_zellij
   if [[ $launch_zellij != n ]]
