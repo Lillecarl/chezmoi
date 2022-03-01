@@ -37,6 +37,8 @@ fi
 [ -f "/etc/zshrc" ] && . /etc/zshrc
 # load darwin-nix zshrc
 [ -f "/etc/static/zshrc" ] && . /etc/static/zshrc
+# load ZSH iterm2 integration
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # load direnv
 command -v /usr/bin/env direnv &> /dev/null && eval "$(direnv hook zsh)"
@@ -44,5 +46,6 @@ command -v /usr/bin/env direnv &> /dev/null && eval "$(direnv hook zsh)"
 command -v /usr/bin/env thefuck &> /dev/null && eval $(thefuck --alias)
 # Load starship
 command -v /usr/bin/env starship &> /dev/null && eval "$(starship init zsh)"
+
 
 
