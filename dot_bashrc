@@ -26,6 +26,10 @@ function vim() {
   fi
 }
 
+function pwsh() {
+  /usr/bin/env pwsh -nologo "$@"
+}
+
 function tfswitch() {
 	/usr/bin/env tfswitch -b $XDG_BIN_HOME/terraform "$@"
 }
