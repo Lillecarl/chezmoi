@@ -56,3 +56,9 @@ function nix-user-rebuild() {
   nix-env --file ~/default.nix --install --remove-all
 }
 
+function grt()
+{
+    git rev-parse --show-toplevel
+}
+
+
