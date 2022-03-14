@@ -15,3 +15,4 @@ disabled = false
 # Show which shell we're in, since we're using multiple it's good to know
 [env_var.STARSHIP_SHELL]
 format = " [$env_value]($style) "
+style = "fg:green"

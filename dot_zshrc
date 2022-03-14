@@ -24,6 +24,11 @@ source ~/.bashrc
 # Set local node dir
 [[ -z "${NODE_HOME}" ]] && export NODE_HOME=$HOME/.local/node
 
+function zshaddhistory() {
+    emulate -L zsh
+    if [[ $1 = *"systemctl reboot"* ]] ; then return 1; fi
+}
+
 # Node packages in homedir
 export PATH=$NODE_HOME/bin:$PATH
 export NODE_PATH=$NODE_HOME/lib/node_modules
