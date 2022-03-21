@@ -12,6 +12,9 @@ truncation_length = 10
 [status]
 disabled = false
 
+[username]
+format = "[$user]($style) on "
+
 # Show which shell we're in, since we're using multiple it's good to know
 [env_var.STARSHIP_SHELL]
 format = " [$env_value]($style) "
