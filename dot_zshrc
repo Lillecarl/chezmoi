@@ -64,9 +64,9 @@ command -v /usr/bin/env thefuck &> /dev/null && eval $(thefuck --alias)
 # Load starship
 command -v /usr/bin/env starship &> /dev/null && eval "$(starship init zsh)"
 # Load mcfly
+export MCFLY_INTERFACE_VIEW=BOTTOM
 command -v /usr/bin/env mcfly &> /dev/null && eval "$(mcfly init zsh)"
 
 # Configure our EDITORs as our vim alias
 export EDITOR=vim
 export VISUAL=vim
-
