@@ -39,7 +39,8 @@ command -v /usb/bin/env zellij &> /dev/null && eval $(zellij setup --generate-co
 if command -v /usr/bin/env keychain &> /dev/null
 then
   eval $(keychain --eval -q)
-  (&> /dev/null keychain -q id_rsa id_ed25519 &)
+  #(&> /dev/null keychain -q id_rsa id_ed25519 &) # We only use ed25519 now since github is blocking rsa	
+  (&> /dev/null keychain -q id_ed25519 &)
 fi
 
 function cb() {
