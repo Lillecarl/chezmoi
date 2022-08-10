@@ -259,6 +259,8 @@ keybinds:
         # Allow exiting mode with Esc
         - action: [SwitchToMode: Normal,]
           key: [Esc,]
+        - action: [EditScrollback, SwitchToMode: Normal]
+          key: [Char: 'e']
         - action: [SwitchToMode: Normal,]
           key: [Ctrl: 'r', Ctrl: 's', Char: ' ',
           Char: "\n",]
