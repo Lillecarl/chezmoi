@@ -3,6 +3,22 @@
     "telemetry.telemetryLevel": "off",
     "keyboard.dispatch": "keyCode",
     "redhat.telemetry.enabled": false,
-    "vim.enableNeovim": true,
+    //"vim.enableNeovim": true,
     "workbench.startupEditor": "none",
+    "editor.inlineSuggest.enabled": true,
+    "update.mode": "none",
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": true,
+        "plaintext": false,
+        "markdown": false
+    },
+    "files.autoSave": "onFocusChange",
+    "files.autoSaveDelay": 500,
+    "editor.insertSpaces": true,
+    "[tf]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+    "go.toolsManagement.autoUpdate": true
 }
