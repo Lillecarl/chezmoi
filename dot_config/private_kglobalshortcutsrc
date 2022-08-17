@@ -15,7 +15,7 @@ _k_friendly_name=Accessibility
 [kcm_touchpad]
 Disable Touchpad=Touchpad Off,Touchpad Off,Disable Touchpad
 Enable Touchpad=Touchpad On,Touchpad On,Enable Touchpad
-Toggle Touchpad=Touchpad Toggle,Touchpad Toggle,Toggle Touchpad
+Toggle Touchpad=Touchpad Toggle,Touchpad Toggle\tMeta+Ctrl+Zenkaku Hankaku,Toggle Touchpad
 _k_friendly_name=Touchpad
 
 [kded5]
@@ -25,8 +25,9 @@ display=Display\tMeta+P,Display\tMeta+P,Switch Display
 
 [khotkeys]
 _k_friendly_name=Custom Shortcuts Service
-{5f528e69-8b04-4806-ac33-94d5ad6c533f}=Alt+Esc,none,Rofi window
-{aae63bc2-2f0b-436c-a725-5d2105420b6f}=Alt+Space,none,Rofi drun
+{3022ab02-0ffe-4956-9c85-3f1af4d94a14}=Alt+Esc,none,krunner window
+{5f528e69-8b04-4806-ac33-94d5ad6c533f}=none,none,Rofi window
+{aae63bc2-2f0b-436c-a725-5d2105420b6f}=none,none,Rofi drun
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=none,none,Search
 {d8fd0519-67ab-4242-bfc8-e42f38e633ae}=none,none,Launch Konsole
 
@@ -234,10 +235,14 @@ playpausemedia=Media Play,Media Play,Play/Pause media playback
 previousmedia=Media Previous,Media Previous,Media playback previous
 stopmedia=Media Stop,Media Stop,Stop media playback
 
+[org.kde.dolphin.desktop]
+_k_friendly_name=Dolphin
+_launch=Meta+E,Meta+E,Dolphin
+
 [org.kde.krunner.desktop]
 RunClipboard=none,Alt+Shift+F2,Run command on clipboard contents
 _k_friendly_name=KRunner
-_launch=none,Alt+Space\tAlt+F2\tSearch,KRunner
+_launch=Alt+Space,Alt+Space\tAlt+F2\tSearch,KRunner
 
 [org.kde.plasma.emojier.desktop]
 _k_friendly_name=Emoji Selector
@@ -297,3 +302,12 @@ stop current activity=Meta+S,Meta+S,Stop Current Activity
 switch to next activity=none,,Switch to Next Activity
 switch to previous activity=none,,Switch to Previous Activity
 toggle do not disturb=none,,Toggle do not disturb
+
+[systemsettings.desktop]
+_k_friendly_name=System Settings
+_launch=Tools,Tools,System Settings
+kcm-kscreen=none,none,Display Configuration
+kcm-lookandfeel=none,none,Global Theme
+kcm-users=none,none,Users
+powerdevilprofilesconfig=none,none,Energy Saving
+screenlocker=none,none,Screen Locking
