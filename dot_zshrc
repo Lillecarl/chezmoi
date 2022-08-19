@@ -71,3 +71,5 @@ command -v /usr/bin/env mcfly &> /dev/null && eval "$(mcfly init zsh)"
 # Configure our EDITORs as our vim alias
 export EDITOR=vim
 export VISUAL=vim
+
+alias ls='exa -lah'
