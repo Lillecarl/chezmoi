@@ -62,4 +62,6 @@ function nix-user-rebuild() {
 #    git rev-parse --show-toplevel
 #}
 
+alias terrafrom='terraform'
+
 
