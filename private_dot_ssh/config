@@ -5,4 +5,8 @@ Host *
     User lillecarl
     ServerAliveInterval 30
     ServerAliveCountMax 2
-    IdentityFile ~/.ssh/id_ed25519    
+    IdentityFile ~/.ssh/id_ed25519
+    PubkeyAcceptedKeyTypes +ssh-rsa
+    PubkeyAcceptedAlgorithms +ssh-rsa
+    HostkeyAlgorithms +ssh-rsa
+    KexAlgorithms +diffie-hellman-group1-sha1
