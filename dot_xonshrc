@@ -55,3 +55,21 @@ $NODE_PATH=$NODE_HOME+"/lib/node_modules"
 # McFly configuration
 $MCFLY_INTERFACE_VIEW="BOTTOM"
 $MCFLY_RESULTS_SORT="LAST_RUN"
+
+def bluemic():
+    pactl set-card-profile $(pactl list cards short | grep bluez |  awk '{ print $1 }') headset-head-unit
+
+def bluesound():
+    pactl set-card-profile $(pactl list cards short | grep bluez |  awk '{ print $1 }') a2dp-sink
+
+# If keychain binary exists, load ed25519 key
+if which("keychain"):
+  keychain -q id_ed25519
+
+aliases["vim"] = "nvim"
+
+def _tfswitch(args, stdin=None):
+  /usr/bin/env tfswitch -b $XDG_BIN_HOME/terraform @(args)
+
+aliases["tfswitch"] = _tfswitch
+
