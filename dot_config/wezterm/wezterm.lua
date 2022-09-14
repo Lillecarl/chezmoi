@@ -8,5 +8,6 @@ return {
 		'Hack',
 		'Unifont',
 	}),
+	font_size = 10,
 	enable_wayland = true,
 }
