@@ -1,0 +1,45 @@
+#! /usr/bin/env xonsh
+# PYTHON_ARGCOMPLETE_OK
+
+import argparse
+
+argp = argparse.ArgumentParser(description="Explanation")
+argp.add_argument('--os')
+args = argp.parse_args()
+
+
+display: str = '0x0f' # DP
+serial:str = "TBF02423SL0" # Serial of "main" monitor
+tries: int = 10
+
+if args.os == 'lin':
+  display = '0x03' # DVI
+
+monitorcount = 0
+
+for output in $(kscreen-doctor -o).splitlines():
+  tries -= 1
+  monitorcount += 1
+  if output.find("DVI") != -1:
+    break
+  if tries < 0:
+    break
+
+print("Switching monitor layout")
+if args.os == 'lin':
+  kscreen-doctor output.@(monitorcount).position.1920,0
+else:
+  kscreen-doctor output.@(monitorcount).position.0,0
+print("Switching done")
+
+tries = 10
+print("Switching display inputs")
+while $(sudo ddcutil --sn @(serial) getvcp 0x60).lower().find(display) == -1:
+  tries -= 1
+  print("Sending display input switch data")
+  sudo ddcutil --sn @(serial) setvcp 0x60 @(display)
+  sleep 1
+  if tries < 0:
+    break
+
+print("Switching done")
