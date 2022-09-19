@@ -74,3 +74,24 @@ def _tfswitch(args, stdin=None):
 
 aliases["tfswitch"] = _tfswitch
 
+def _blueprofile(args, stdin=None):
+  profile = None
+
+  card: str = $(pactl list cards short | grep bluez | awk '{print $1 }')
+
+  if args[0] == "mic":
+    profile = "headset-head-unit"
+  elif args[0] == "music":
+    profile = "a2dp-sink"
+
+  if len(card) <= 0:
+    print("Found no suitable bluetooth \"card\"")
+    profile = None
+
+  if profile:
+    print("Switching profile")
+    pactl set-card-profile @(card) @(profile)
+    if profile == "headset-head-unit":
+      pactl set-default-source $(pactl list sources short | rg bluez_input | awk '{ print $1 }') # Switch this when switching from bluetooth too
+
+aliases["blueprofile"] = _blueprofile
