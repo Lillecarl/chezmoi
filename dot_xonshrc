@@ -2,6 +2,7 @@
 # XONSH WEBCONFIG END
 
 $VI_MODE = True
+$CASE_SENSITIVE_COMPLETIONS = False
 
 # Starship prompt
 execx($(starship init xonsh))
