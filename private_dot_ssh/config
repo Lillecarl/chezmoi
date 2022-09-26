@@ -6,6 +6,8 @@ Host *
     ServerAliveInterval 30
     ServerAliveCountMax 2
     IdentityFile ~/.ssh/id_ed25519
+
+    # This is insecure shit because appliances are crap
     PubkeyAcceptedKeyTypes +ssh-rsa
     PubkeyAcceptedAlgorithms +ssh-rsa
     HostkeyAlgorithms +ssh-rsa
