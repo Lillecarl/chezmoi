@@ -18,6 +18,8 @@ xontrib load fzf-widgets
 
 $VI_MODE = True
 $CASE_SENSITIVE_COMPLETIONS = False
+# Use bash completions, we shall add more
+$BASH_COMPLETIONS.insert(0,"/run/current-system/sw/share/bash-completion/bash_completion")
 
 # Starship prompt
 execx($(starship init xonsh))
