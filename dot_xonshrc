@@ -6,6 +6,9 @@ import time
 import json
 from prompt_toolkit.keys import Keys
 
+source ~/.config/xonsh/job.py
+$PROMPT_FIELDS["current_job"] = CurrentJobField()
+
 # xontribs
 $XONSH_CAPTURE_ALWAYS=True # Required for output_search
 $fzf_history_binding = Keys.ControlR
