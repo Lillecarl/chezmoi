@@ -4,6 +4,8 @@
 # Standard imports
 import time
 import json
+import platform
+import os
 from prompt_toolkit.keys import Keys
 
 source ~/.config/xonsh/job.py
@@ -83,6 +85,9 @@ def bluesound():
 # If keychain binary exists, load ed25519 key
 if which("keychain"):
   keychain -q id_ed25519
+  if os.uname()[1] == "nub":
+    keychain -q ed_viaplay
+    keychain -q rsa_viaplay
 
 aliases["vim"] = "nvim"
 
