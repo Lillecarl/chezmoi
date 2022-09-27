@@ -1,7 +1,6 @@
 # XONSH WEBCONFIG START
 # XONSH WEBCONFIG END
 
-
 # Standard imports
 import time
 import json
@@ -9,6 +8,9 @@ import platform
 import os
 from prompt_toolkit.keys import Keys
 from shutil import which
+
+# Set shell to xonsh (We're going to spawn a new shell)
+$SHELL = which("xonsh")
 
 # Ask if we wanna launch Zellij if we're not inside of it
 # If ZELLIJ env var exists we don't wanna spawn it again
@@ -55,8 +57,6 @@ $XONSH_HISTORY_BACKEND = 'sqlite'
 # Starship prompt
 execx($(starship init xonsh))
 
-# Set shell to xonsh (We're going to spawn a new shell)
-$SHELL = which("xonsh")
 $EDITOR = "vim"
 $VISUAL = "vim"
 
