@@ -1,3 +1,5 @@
+#! /usr/bin/env xonsh
+
 # XONSH WEBCONFIG START
 # XONSH WEBCONFIG END
 
