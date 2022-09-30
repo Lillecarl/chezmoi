@@ -123,4 +123,4 @@ def _blueprofile(args, stdin=None):
 aliases["blueprofile"] = _blueprofile
 
 aliases["bluemic"] = lambda x: _blueprofile(args=["mic"])
-aliases["bluesound"] = lambda x: _blueprofile(args=["sound"])
+aliases["bluesound"] = lambda x: _blueprofile(args=["music"])
