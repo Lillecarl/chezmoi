@@ -12,7 +12,7 @@ from prompt_toolkit.keys import Keys
 from shutil import which
 
 # Set shell to xonsh (We're going to spawn a new shell)
-$SHELL = which("xonsh")
+$SHELL = p"/run/current-system/sw/bin/xonsh"
 
 # Ask if we wanna launch Zellij if we're not inside of it
 # If ZELLIJ env var exists we don't wanna spawn it again
