@@ -50,7 +50,7 @@ $VI_MODE = True
 # Makes "cd" bareable with beautiful paths
 $CASE_SENSITIVE_COMPLETIONS = False
 
-# Add bash completions to 
+# Add bash completions to xonsh, not sure how this works but it's heaps cool.
 $BASH_COMPLETIONS= ["/run/current-system/sw/share/bash-completion/bash_completion"]
 
 # Use SQLite history backend
@@ -62,7 +62,10 @@ execx($(starship init xonsh))
 $EDITOR = "vim"
 $VISUAL = "vim"
 
+# Better ls
 aliases["ls"] = "exa -lah"
+# Go to git root folder
+aliases['grt'] = lambda: os.chdir($(git rev-parse --show-toplevel).strip())
 
 # https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html#variables
 if "XDG_CACHE_HOME" not in ${...}:
@@ -89,6 +92,7 @@ $NODE_PATH=$NODE_HOME+"/lib/node_modules"
 # If keychain binary exists, load ed25519 key
 if which("keychain"):
   keychain -q id_ed25519
+  # Add work keys to work machine
   if os.uname()[1] == "nub":
     keychain -q ed_viaplay
     keychain -q rsa_viaplay
