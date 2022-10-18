@@ -1,4 +1,14 @@
-if [ -z "$ZELLIJ" ] && command -v /usr/bin/env zellij &> /dev/null
+# PS1 = interactive shell
+if [[ $PS1 ]] && [[ $TERM_PROGRAM != "vscode" ]]
+then
+  read "?Wanna launch xonsh? Y/n: " launch_xonsh
+  if [[ $launch_zellij != n ]]
+  then
+    exec xonsh
+  fi
+fi
+
+if [ -z "$ZELLIJ" ] && command -v /usr/bin/env zellij &> /dev/null && [[ $TERM_PROGRAM != "vscode" ]]
 then
   read "?Wanna launch Zellij? Y/n: " launch_zellij
   if [[ $launch_zellij != n ]]
