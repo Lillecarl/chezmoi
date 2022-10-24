@@ -89,6 +89,8 @@ $PATH.add($NODE_HOME)
 $NODE_PATH=$NODE_HOME+"/lib/node_modules"
 
 
+# Load keychain bash environment stuff
+source-bash $(keychain --eval -q) --suppress-skip-message
 # If keychain binary exists, load ed25519 key
 if which("keychain"):
   keychain -q id_ed25519
