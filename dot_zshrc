@@ -2,7 +2,7 @@
 if [[ $PS1 ]] && [[ $TERM_PROGRAM != "vscode" ]]
 then
   read "?Wanna launch xonsh? Y/n: " launch_xonsh
-  if [[ $launch_zellij != n ]]
+  if [[ $launch_xonsh != n ]]
   then
     exec xonsh
   fi
