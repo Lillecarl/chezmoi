@@ -37,6 +37,9 @@ $PROMPT_FIELDS["current_job"] = CurrentJobField()
 # Execute direnv in Xonsh
 xontrib load direnv
 
+# Allow banging shell scripts from xonsh
+xontrib load sh
+
 # Search previous commands output with Alt+f
 $XONSH_CAPTURE_ALWAYS=True # Required for output_search
 xontrib load output_search
