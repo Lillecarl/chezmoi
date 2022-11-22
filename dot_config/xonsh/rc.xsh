@@ -28,22 +28,15 @@ elif which("zellij") is not None:
       # Spawn new default session
       exec zellij -s default
 
-# Fixes xonsh showing it's executing cat when doing nothing, some kind of bug that i just worked around.
-source ~/.config/xonsh/job.py
-$PROMPT_FIELDS["current_job"] = CurrentJobField()
-
 # xontribs
-#
+
 # Execute direnv in Xonsh
 xontrib load direnv
-
 # Allow banging shell scripts from xonsh
 xontrib load sh
-
 # Search previous commands output with Alt+f
 $XONSH_CAPTURE_ALWAYS=True # Required for output_search
 xontrib load output_search
-
 # Replaces McFly, loads history into a fuzzy searcher TUI
 $fzf_history_binding = Keys.ControlR
 xontrib load fzf-widgets
@@ -55,6 +48,9 @@ $CASE_SENSITIVE_COMPLETIONS = False
 
 # Add bash completions to xonsh, not sure how this works but it's heaps cool.
 $BASH_COMPLETIONS= ["/run/current-system/sw/share/bash-completion/bash_completion"]
+# Helm completion
+source-bash $(helm completion bash) --suppress-skip-message
+
 
 # Use SQLite history backend
 $XONSH_HISTORY_BACKEND = 'sqlite'
@@ -62,13 +58,8 @@ $XONSH_HISTORY_BACKEND = 'sqlite'
 # Starship prompt
 execx($(starship init xonsh))
 
-$EDITOR = "vim"
-$VISUAL = "vim"
-
-# Better ls
-aliases["ls"] = "exa -lah"
-# Go to git root folder
-aliases['grt'] = lambda: os.chdir($(git rev-parse --show-toplevel).strip())
+$EDITOR = "nvim"
+$VISUAL = "nvim"
 
 # https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html#variables
 if "XDG_CACHE_HOME" not in ${...}:
@@ -102,34 +93,3 @@ if which("keychain"):
     keychain -q ed_viaplay
     keychain -q rsa_viaplay
 
-aliases["vim"] = "nvim"
-
-def _tfswitch(args, stdin=None):
-  /usr/bin/env tfswitch -b $XDG_BIN_HOME/terraform @(args)
-
-aliases["tfswitch"] = _tfswitch
-
-def _blueprofile(args, stdin=None):
-  profile = None
-
-  card: str = $(pactl list cards short | grep bluez | awk '{print $1 }')
-
-  if args[0] == "mic":
-    profile = "headset-head-unit"
-  elif args[0] == "music":
-    profile = "a2dp-sink"
-
-  if len(card) <= 0:
-    print("Found no suitable bluetooth \"card\"")
-    profile = None
-
-  if profile:
-    print("Switching profile")
-    pactl set-card-profile @(card) @(profile)
-    if profile == "headset-head-unit":
-      pactl set-default-source $(pactl list sources short | rg bluez_input | awk '{ print $1 }') # Switch this when switching from bluetooth too
-
-aliases["blueprofile"] = _blueprofile
-
-aliases["bluemic"] = lambda x: _blueprofile(args=["mic"])
-aliases["bluesound"] = lambda x: _blueprofile(args=["music"])

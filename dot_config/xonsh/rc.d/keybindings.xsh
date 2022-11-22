@@ -13,3 +13,4 @@ def custom_keybindings(bindings, **kw):
   @bindings.add(Keys.ControlE)
   def begin_line(event):
     event.current_buffer.cursor_position = len(event.current_buffer.text)
+
